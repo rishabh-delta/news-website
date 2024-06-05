@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>news-website using node.js</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+            <img src="/img/logo.png" alt="image">
+            </div>
+            <form action="/search" method="get">
+                <div class="searchBox">
+                    <h2>Search the topic</h2>
+                    <div class="input">
+                        <input type="text" placeholder="search here" name="searchResult"> 
+                        <button>Search</button>
+                    </div>
+                    
+                    
+                </div>
+            </form>
+        </nav>
+    </header>
+    
+    
+    <div class="newsBlock">
+        <%articles.forEach((article)=>{%>
+            <div class="card">
+                <img src="<%=article.urlToImage%>" alt="news article image">
+                <h1><%=article.title%></h1>
+                <p><%=article.content%></p>
+            </div>
+            
+        <%})%>
+    </div>
+</body>
+</html>
